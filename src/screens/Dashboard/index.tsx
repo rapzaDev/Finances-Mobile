@@ -1,3 +1,7 @@
+import React from 'react';
+
+import { HighlightCard } from '../../components/HIghlightCard';
+
 import { 
     Container,
     Header,
@@ -31,6 +35,9 @@ function Dashboard() {
                     </UserWrapper>
 
                 </Header>
+
+                <HighlightCard />
+
             </Container>
         </>
     );
