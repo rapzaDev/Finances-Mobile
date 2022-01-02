@@ -61,3 +61,10 @@ export const PowerIcon = styled(Feather)`
     color: ${ ({theme}) => theme.colors.shape };
     font-size: ${ RFValue(24) }px;
 `;
+
+//HIGHLIGHT CARDS
+
+export const HighlightCards = styled.ScrollView`
+    padding: 0 ${ RFValue(8) }px;
+`;
+

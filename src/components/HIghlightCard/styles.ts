@@ -11,18 +11,40 @@ export const Container = styled.View`
     border-radius: ${ RFValue(5) }px;
 
     padding: ${ RFValue(19) }px ${ RFValue(23) }px ${ RFValue(42) }px;
+    margin-right: ${ RFValue(16) }px;
 `;
 
-export const Card = styled.View``;
+export const CardHeader = styled.View`
+    flex-direction: row;
 
-export const CardHeader = styled.View``;
+    justify-content: space-between;
+`;
 
-export const CardTitle = styled.Text``;
+export const CardTitle = styled.Text`
+    font-family: ${ ({theme}) => theme.fonts.regular };
+    font-size: ${ RFValue(14) }px;
 
-export const EntryIcon = styled(Feather)``;
+    color: ${ ({theme}) => theme.colors.title };
+`;
+
+export const EntryIcon = styled(Feather)`
+    color: ${ ({theme}) => theme.colors.success };
+    font-size: ${ RFValue(40) }px;
+`;
 
 export const CardContent = styled.View``;
 
-export const CardAmount = styled.Text``;
+export const CardAmount = styled.Text`
+    font-family: ${ ({theme}) => theme.fonts.medium };
+    font-size: ${ RFValue(32) }px;
 
-export const LastTransaction = styled.Text``;
+    color: ${ ({theme}) => theme.colors.success_light };
+
+    margin-top: ${ RFValue(38) }px;
+`;
+
+export const LastTransaction = styled.Text`
+    font-size: ${ RFValue(12) }px;
+
+    color: ${ ({theme}) => theme.colors.text };
+`;

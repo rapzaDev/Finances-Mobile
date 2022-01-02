@@ -11,7 +11,8 @@ import {
     User,
     UserGreeting,
     UserName,
-    PowerIcon
+    PowerIcon,
+    HighlightCards,
 } from './styles';
 
 function Dashboard() {
@@ -36,7 +37,17 @@ function Dashboard() {
 
                 </Header>
 
-                <HighlightCard />
+                <HighlightCards
+                    horizontal
+                    showsHorizontalScrollIndicator={false}
+                    contentContainerStyle={{ 
+                        paddingHorizontal: 24,
+                    }}
+                >
+                    <HighlightCard />
+                    <HighlightCard />
+                    <HighlightCard />
+                </HighlightCards>
 
             </Container>
         </>
