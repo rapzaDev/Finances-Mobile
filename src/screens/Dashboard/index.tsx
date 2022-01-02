@@ -40,9 +40,7 @@ function Dashboard() {
                 <HighlightCards
                     horizontal
                     showsHorizontalScrollIndicator={false}
-                    contentContainerStyle={{ 
-                        paddingHorizontal: 24,
-                    }}
+                    contentContainerStyle={ { paddingHorizontal: 24 } }
                 >
                     <HighlightCard />
                     <HighlightCard />

@@ -64,7 +64,11 @@ export const PowerIcon = styled(Feather)`
 
 //HIGHLIGHT CARDS
 
-export const HighlightCards = styled.ScrollView`
+export const HighlightCards = styled.ScrollView.attrs({
+    horizontal: true,
+    showsHorizontalScrollIndicator: false,
+    contentContainerStyle: { paddingHorizontal: 24 }
+})`
     padding: 0 ${ RFValue(8) }px;
 `;
 
