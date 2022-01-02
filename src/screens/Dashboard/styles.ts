@@ -72,6 +72,6 @@ export const HighlightCards = styled.ScrollView.attrs({
     padding: 0 ${ RFValue(8) }px;
 
     position: absolute;
-    top: ${ RFPercentage(21)}px;
+    top: ${ RFPercentage(21) }px;
 `;
 
