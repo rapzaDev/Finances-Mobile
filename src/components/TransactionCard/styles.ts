@@ -8,6 +8,7 @@ export const Container = styled.View`
     border-radius: ${ RFValue(5) }px;
 
     padding:  ${ RFValue(17) }px ${ RFValue(24) }px;
+    margin-bottom: ${ RFValue(16) }px;
 `;
 
 export const Title = styled.Text`
@@ -54,7 +55,7 @@ export const CategoryName = styled.Text`
     margin-left: ${ RFValue(17) }px;
 `;
 
-export const CategoryDate = styled.Text`
+export const TransactionDate = styled.Text`
     font-size: ${ RFValue(14) }px;
     font-family: ${ ({ theme }) => theme.fonts.regular };
 

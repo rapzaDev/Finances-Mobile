@@ -90,3 +90,5 @@ export const Title = styled.Text`
 
     margin-bottom: ${ RFValue(16) }px;
 `;
+
+export const TransactionsList = styled.FlatList``;

@@ -6,21 +6,38 @@ import {
     Category,
     Icon,
     CategoryName,
-    CategoryDate,
+    TransactionDate,
 } from './styles';
 
-function TransactionCard () {
+type Category = {
+    name: string;
+    icon: string;
+}
+
+type Data = {
+    title: string;
+    amount: string;
+    category: Category;
+    date: string;
+}
+
+interface TransactionCardProps {
+    data: Data;
+} 
+
+function TransactionCard ( { data } : TransactionCardProps ) {
     return (
         <Container>
-            <Title>Desenvolvimento de site</Title>
-            <Amount>+ R$ 12.000,00</Amount>
-            
+            <Title>{data.title}</Title>
+            <Amount>{data.amount}</Amount>
+             
             <Footer>
                 <Category>
                     <Icon name="dollar-sign"/>
-                    <CategoryName>Vendas</CategoryName>
+                    <CategoryName>{data.category.name}</CategoryName>
                 </Category>
-                <CategoryDate>25/12/2021</CategoryDate>
+
+                <TransactionDate>{data.date}</TransactionDate>
             </Footer>
 
         </Container>
