@@ -75,3 +75,18 @@ export const HighlightCards = styled.ScrollView.attrs({
     top: ${ RFPercentage(21) }px;
 `;
 
+export const Transactions = styled.View`
+    flex: 1;
+    padding: 0 ${ RFValue(32) }px;
+    
+    margin-top: ${ RFPercentage(15) }px;
+`;
+
+export const Title = styled.Text`
+    font-size: ${ RFValue(18) }px;
+    font-family: ${ ({ theme }) => theme.fonts.regular };
+
+    color: ${ ({ theme }) => theme.colors.shape };
+
+    margin-bottom: ${ RFValue(16) }px;
+`;
