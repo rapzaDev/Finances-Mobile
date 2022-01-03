@@ -15,6 +15,7 @@ type Category = {
 }
 
 type Data = {
+    type: 'positive' | 'negative'
     title: string;
     amount: string;
     category: Category;
@@ -29,11 +30,13 @@ function TransactionCard ( { data } : TransactionCardProps ) {
     return (
         <Container>
             <Title>{data.title}</Title>
-            <Amount>{data.amount}</Amount>
+            <Amount type={ data.type }>
+                { data.type === 'positive' ? `+ ${data.amount}` : `- ${data.amount}`}
+            </Amount>
              
             <Footer>
                 <Category>
-                    <Icon name="dollar-sign"/>
+                    <Icon name={data.category.icon}/>
                     <CategoryName>{data.category.name}</CategoryName>
                 </Category>
 

@@ -24,22 +24,46 @@ function Dashboard() {
 
     const data = [
         {
+            type: "positive",
             title:"Desenvolvimento de site",
-            amount:"+ R$ 12.000,00",
+            amount:"R$ 12.000,00",
             category: { name:"Vendas", icon: "dollar-sign" },
             date:"25/12/2021",
         },
         {
-            title:"Aluguel",
-            amount:"- R$ 2.000,00",
-            category: { name:"Casa", icon: "dollar-sign" },
+            type: "negative",
+            title:"Hamburgueria Points",
+            amount:"R$ 59,00",
+            category: { name:"Alimentação", icon: "coffee" },
+            date:"20/12/2021",
+        },
+        {
+            type: "negative",
+            title:"Aluguel da casa",
+            amount:"R$ 1.000,00",
+            category: { name:"Casa", icon: "home" },
             date:"2/12/2021",
         },
         {
-            title:"Gatos",
-            amount:"- R$ 200,00",
-            category: { name:"Casa", icon: "dollar-sign" },
+            type: "positive",
+            title:"Freela de aplicativo",
+            amount:"R$ 2.400,00",
+            category: { name:"Vendas", icon: "dollar-sign" },
+            date:"5/12/2021",
+        },
+        {
+            type: "negative",
+            title:"Ração dos gatos",
+            amount:"R$ 200,00",
+            category: { name:"Gatos", icon: "github" },
             date:"31/12/2021",
+        },
+        {
+            type: "positive",
+            title:"Renda site admob",
+            amount:"R$ 3.000,00",
+            category: { name:"Vendas", icon: "dollar-sign" },
+            date:"27/12/2021",
         },
 
     ]
