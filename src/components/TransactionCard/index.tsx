@@ -14,8 +14,9 @@ type Category = {
     icon: string;
 }
 
-type Data = {
-    type: 'positive' | 'negative'
+export type TransactionCardData = {
+    id: number;
+    type: 'positive' | 'negative';
     title: string;
     amount: string;
     category: Category;
@@ -23,7 +24,7 @@ type Data = {
 }
 
 interface TransactionCardProps {
-    data: Data;
+    data: TransactionCardData;
 } 
 
 function TransactionCard ( { data } : TransactionCardProps ) {
