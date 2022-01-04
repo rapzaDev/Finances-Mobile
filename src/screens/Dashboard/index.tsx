@@ -19,11 +19,15 @@ import {
     TransactionsList,
 } from './styles';
 
+export interface DataListProps extends TransactionCardData {
+    id: string;
+};
+
 function Dashboard() {
 
-    const data = [
+    const data: DataListProps[] = [
         {
-            id: 1,            
+            id: "1",            
             type: "positive",
             title:"Desenvolvimento de site",
             amount:"R$ 12.000,00",
@@ -31,7 +35,7 @@ function Dashboard() {
             date:"25/12/2021",
         },
         {
-            id: 2,   
+            id: "2",   
             type: "negative",
             title:"Hamburgueria Points",
             amount:"R$ 59,00",
@@ -39,7 +43,7 @@ function Dashboard() {
             date:"20/12/2021",
         },
         {
-            id: 3,   
+            id: "3",   
             type: "negative",
             title:"Aluguel da casa",
             amount:"R$ 1.000,00",
@@ -47,7 +51,7 @@ function Dashboard() {
             date:"2/12/2021",
         },
         {
-            id: 4,   
+            id: "4",   
             type: "positive",
             title:"Freela de aplicativo",
             amount:"R$ 2.400,00",
@@ -55,7 +59,7 @@ function Dashboard() {
             date:"5/12/2021",
         },
         {
-            id: 5,   
+            id: "5",   
             type: "negative",
             title:"Ração dos gatos",
             amount:"R$ 200,00",
@@ -63,7 +67,7 @@ function Dashboard() {
             date:"31/12/2021",
         },
         {
-            id: 6,   
+            id: "6",   
             type: "positive",
             title:"Renda site admob",
             amount:"R$ 3.000,00",
@@ -119,6 +123,7 @@ function Dashboard() {
 
                     <TransactionsList 
                         data={data}
+                        keyExtractor={ item => item.id }
                         renderItem={ ({ item }) => <TransactionCard data={ item } />  }
                     />
 

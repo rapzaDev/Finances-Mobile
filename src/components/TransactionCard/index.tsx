@@ -9,13 +9,12 @@ import {
     TransactionDate,
 } from './styles';
 
-type Category = {
+interface Category {
     name: string;
     icon: string;
 }
 
-export type TransactionCardData = {
-    id: number;
+export interface TransactionCardData {
     type: 'positive' | 'negative';
     title: string;
     amount: string;
