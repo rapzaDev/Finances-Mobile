@@ -1,3 +1,5 @@
+import React, { useState } from 'react';
+
 import { Input } from '../../components/Form/Input';
 import { Button } from '../../components/Form/Button';
 
@@ -7,9 +9,19 @@ import {
     Title,
     Form,
     Fields,
+    TransactionsTypeContainer,
 } from './styles';
 
+import { TransactionType } from '../../components/Form/TransactionType';
+
 function Register () {
+
+    const [ transactionType, setTransactionType ] = useState('');
+
+    function handleTransactionTypeSelect(type: 'positive' | 'negative') {
+        setTransactionType(type);
+    }
+
     return (
         <Container>
             <Header>
@@ -27,8 +39,23 @@ function Register () {
                         placeholder="Preço"
                         placeholderTextColor="#CECEDE"
                     />
+
+                    <TransactionsTypeContainer>
+                        <TransactionType 
+                            title="Entrada"
+                            type="positive"
+                            onPress={() => handleTransactionTypeSelect('positive')}
+                            isSelected={transactionType === 'positive'}
+                        />
+                        <TransactionType 
+                            title="Saída"
+                            type="negative"
+                            onPress={() => handleTransactionTypeSelect('negative')}
+                            isSelected={transactionType === 'negative'}
+                        />
+                    </TransactionsTypeContainer>
                 </Fields>
-                
+
                 <Button title="Enviar"/>
             </Form>
 
