@@ -13,6 +13,7 @@ import {
 } from './styles';
 
 import { TransactionType } from '../../components/Form/TransactionType';
+import { CategorySelect } from '../../components/Form/CategorySelect';
 
 function Register () {
 
@@ -54,6 +55,11 @@ function Register () {
                             isSelected={transactionType === 'negative'}
                         />
                     </TransactionsTypeContainer>
+
+                    <CategorySelect 
+                        title="Categoria"      
+                    />
+
                 </Fields>
 
                 <Button title="Enviar"/>
