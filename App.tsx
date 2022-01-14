@@ -12,7 +12,8 @@ import {
 import theme from './src/global/styles/';
 
 // import { Dashboard } from './src/screens/Dashboard';
-import { Register } from './src/screens/Register';
+// import { Register } from './src/screens/Register';
+import { CategorySelect } from './src/screens/CategorySelect';
 import { StatusBar } from 'react-native';
 
 export default function App() {
@@ -28,7 +29,7 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <StatusBar backgroundColor={theme.colors.background}/>
-      <Register />
+      <CategorySelect />
       {/* <Dashboard /> */}
     </ThemeProvider>
   );
