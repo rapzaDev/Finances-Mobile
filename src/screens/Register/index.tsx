@@ -74,7 +74,7 @@ function Register () {
                     </TransactionsTypeContainer>
 
                     <CategorySelectButton 
-                        title="Categoria"      
+                        title={category.name}      
                         onPress={handleOpenSelectCategoryModal}
                     />
 
