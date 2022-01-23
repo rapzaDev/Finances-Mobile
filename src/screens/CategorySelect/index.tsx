@@ -51,7 +51,9 @@ function CategorySelect ({
                         isActive={ category.key === item.key }
                     >
                         <Icon name={item.icon} />
-                        <Name>{item.name}</Name>
+                        <Name isActive={ category.key === item.key } >
+                            {item.name}
+                        </Name>
                     </Category>
                 )}
                 ItemSeparatorComponent={() => <Separator />}
