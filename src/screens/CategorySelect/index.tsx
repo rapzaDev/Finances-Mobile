@@ -20,7 +20,7 @@ interface Category {
 }
 
 interface CategorySelectProps {
-    category: string;
+    category: Category;
     setCategory: ( category: Category) => void; 
     closeSelectCategory: () => void;
 } 
@@ -41,7 +41,7 @@ function CategorySelect ({
                 data={ categories }
                 style={{ flex: 1, width: '100%'}}
                 keyExtractor={ ( item ) => item.key }
-                renderItem={({item}) => (
+                renderItem={ ({ item }) => (
                     <Category>
                         <Icon name={item.icon} />
                         <Name>{item.name}</Name>
@@ -53,6 +53,7 @@ function CategorySelect ({
             <Footer>
                 <Button 
                     title="Selecionar"
+                    onPress={closeSelectCategory}
                 />
             </Footer>
 

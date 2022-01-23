@@ -36,12 +36,16 @@ export const Category = styled.View`
 
 export const Icon  = styled(Feather)`
     font-size: ${RFValue(20)}px;
-    margin-right: ${RFValue(16)}px;;
+    margin-right: ${RFValue(16)}px;
+
+    color: ${({theme}) => theme.colors.title };
 `;
 
 export const Name = styled.Text`
     font-family: ${({theme}) => theme.fonts.regular };
     font-size: ${RFValue(14)}px;
+
+    color: ${({theme}) => theme.colors.text };
 `;
 
 export const Separator = styled.View`

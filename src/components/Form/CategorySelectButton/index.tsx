@@ -6,15 +6,16 @@ import {
 
 interface CategorySelectProps {
     title: string;
+    onPress: () => void;
 }
 
-function CategorySelect ( { title }:CategorySelectProps) {
+function CategorySelectButton ( { title, onPress }:CategorySelectProps) {
     return (
-        <Container>
+        <Container onPress={onPress} >
             <Category>{title}</Category>
             <Icon name="chevron-down"/>
         </Container>
     );
 };
 
-export { CategorySelect };
+export { CategorySelectButton };
