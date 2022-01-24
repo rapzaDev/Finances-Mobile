@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Modal } from 'react-native';
+import { useForm } from "react-hook-form";
 
-import { Input } from '../../components/Form/Input';
+import { ControlledInput } from '../../components/Form/ControlledInput';
 import { Button } from '../../components/Form/Button';
 import { TransactionType } from '../../components/Form/TransactionType';
 import { CategorySelectButton } from '../../components/Form/CategorySelectButton';
@@ -18,6 +19,11 @@ import {
 } from './styles';
 
 
+interface FormData {
+    [name: string]: any;
+};
+
+
 function Register () {
 
     const [ transactionType, setTransactionType ] = useState('');
@@ -26,7 +32,12 @@ function Register () {
     const [ category, setCategory ] = useState({
         key: 'category',
         name: 'Categoria',
-    })
+    });
+
+    const { 
+        control,
+        handleSubmit,
+    } = useForm();
 
     function handleTransactionTypeSelect(type: 'positive' | 'negative') {
         setTransactionType(type);
@@ -40,6 +51,15 @@ function Register () {
         setCategoryModalOpen(false);
     }
 
+    function handleRegister(form: FormData) {
+        const data = {
+            name: form.name,
+            amount: form.amount,
+        }
+        
+        console.log(data);
+    }
+
     return (
         <Container>
             <Header>
@@ -48,12 +68,16 @@ function Register () {
 
             <Form>
                 <Fields>
-                    <Input 
+                    <ControlledInput 
+                        name="name"
+                        control={control}
                         placeholder="Nome"
                         placeholderTextColor="#CECEDE"
                     />
 
-                    <Input 
+                    <ControlledInput 
+                        name="amount"
+                        control={control}
                         placeholder="Preço"
                         placeholderTextColor="#CECEDE"
                     />
@@ -80,7 +104,7 @@ function Register () {
 
                 </Fields>
 
-                <Button title="Enviar"/>
+                <Button title="Enviar" onPress={handleSubmit(handleRegister)}/>
             </Form>
 
             <Modal visible={categoryModalOpen}>
