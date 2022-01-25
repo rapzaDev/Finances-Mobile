@@ -6,14 +6,16 @@ import { Input } from '../Input';
 
 import {
     Container,
+    Error,
 } from './styles';
 
 interface ControlledInputProps extends TextInputProps {
     control: Control;
     name: string;
+    error: string;
 };
 
-function ControlledInput( { control, name, ...rest }: ControlledInputProps ) {
+function ControlledInput( { control, name, error, ...rest }: ControlledInputProps ) {
     return(
         <Container>
             <Controller 
@@ -25,9 +27,10 @@ function ControlledInput( { control, name, ...rest }: ControlledInputProps ) {
                         {...rest}
                     />
                 )}
-                name={name}
+                name={name} 
             />
-            {/* <Error> </Error> */}
+            
+            { error && <Error>{error}</Error> }
         </Container>
     );
 };

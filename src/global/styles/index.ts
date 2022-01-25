@@ -8,6 +8,8 @@ export default {
         
         attention: '#E83F5B',
         attention_light: 'rgba(232, 63, 91, 0.5)',
+
+        warning: '#998A0B',
         
         shape: '#FFFFFF',
         

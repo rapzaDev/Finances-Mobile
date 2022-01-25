@@ -25,14 +25,16 @@ interface FormData {
     [name: string]: any;
 };
 
-const schema = yup.object({
-    name: yup.string().required('Nome é obrigatorio'),
+const schema = yup.object().shape({
+    name: yup
+        .string()
+        .required('Nome é obrigatorio'),
     amount: yup
         .number()
         .typeError('Informe um valor númerico')
         .positive('O valor nao pode ser negativo')
-        .required('Valor do preço é obrigatorio')
-})
+        .required('Valor do preço é obrigatorio'),
+}).required();
 
 
 function Register () {
@@ -48,7 +50,6 @@ function Register () {
     const { 
         control,
         handleSubmit,
-        register,
         formState:{ errors }
     } = useForm({
         resolver: yupResolver(schema)
@@ -71,7 +72,7 @@ function Register () {
             return Alert.alert('Selecione o tipo de transação');
 
         if ( category.key === 'category' ) 
-            return Alert.alert('Selecione o tipo de transação');
+            return Alert.alert('Selecione a categoria');
 
 
         const data = {
@@ -93,22 +94,22 @@ function Register () {
                 <Form>
                     <Fields>
                         <ControlledInput 
-                            // name="name"
-                            {...register('name')}
+                            name="name"
                             control={control}
                             placeholder="Nome"
                             placeholderTextColor="#CECEDE"
                             autoCapitalize="sentences"
                             autoCorrect={false}
+                            error={ errors.name && errors.name.message }
                         />
 
                         <ControlledInput    
-                            // name="amount"
-                            {...register('amount')}
+                            name="amount"
                             control={control}
                             placeholder="Preço"
                             placeholderTextColor="#CECEDE"
                             keyboardType="numeric"
+                            error={ errors.amount && errors.amount.message }
                         />
 
                         <TransactionsTypeContainer>
