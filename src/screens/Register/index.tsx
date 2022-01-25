@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Keyboard, Modal, TouchableWithoutFeedback, Alert } from 'react-native';
 import { useForm } from "react-hook-form";
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from 'yup';
 
 import { ControlledInput } from '../../components/Form/ControlledInput';
 import { Button } from '../../components/Form/Button';
@@ -23,6 +25,15 @@ interface FormData {
     [name: string]: any;
 };
 
+const schema = yup.object({
+    name: yup.string().required('Nome é obrigatorio'),
+    amount: yup
+        .number()
+        .typeError('Informe um valor númerico')
+        .positive('O valor nao pode ser negativo')
+        .required('Valor do preço é obrigatorio')
+})
+
 
 function Register () {
 
@@ -37,7 +48,11 @@ function Register () {
     const { 
         control,
         handleSubmit,
-    } = useForm();
+        register,
+        formState:{ errors }
+    } = useForm({
+        resolver: yupResolver(schema)
+    });
 
     function handleTransactionTypeSelect(type: 'positive' | 'negative') {
         setTransactionType(type);
@@ -78,7 +93,8 @@ function Register () {
                 <Form>
                     <Fields>
                         <ControlledInput 
-                            name="name"
+                            // name="name"
+                            {...register('name')}
                             control={control}
                             placeholder="Nome"
                             placeholderTextColor="#CECEDE"
@@ -86,8 +102,9 @@ function Register () {
                             autoCorrect={false}
                         />
 
-                        <ControlledInput 
-                            name="amount"
+                        <ControlledInput    
+                            // name="amount"
+                            {...register('amount')}
                             control={control}
                             placeholder="Preço"
                             placeholderTextColor="#CECEDE"

@@ -11,9 +11,9 @@ import {
 interface ControlledInputProps extends TextInputProps {
     control: Control;
     name: string;
-}
+};
 
-function ControlledInput({ control, name, ...rest }: ControlledInputProps ) {
+function ControlledInput( { control, name, ...rest }: ControlledInputProps ) {
     return(
         <Container>
             <Controller 
@@ -27,6 +27,7 @@ function ControlledInput({ control, name, ...rest }: ControlledInputProps ) {
                 )}
                 name={name}
             />
+            {/* <Error> </Error> */}
         </Container>
     );
 };
