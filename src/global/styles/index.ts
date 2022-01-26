@@ -19,6 +19,8 @@ export default {
         background: '#2A2F32',
 
         selected_category: '#3D3D3D',
+
+        icons: '#565F61',
     }, 
 
     fonts: {

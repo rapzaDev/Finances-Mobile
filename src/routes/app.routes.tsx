@@ -19,14 +19,18 @@ function AppRoutes () {
             <Navigator
                 screenOptions={{
                   headerShown: false,
-                  tabBarActiveTintColor: theme.colors.title,
+                  tabBarActiveTintColor: theme.colors.shape,
+                  tabBarInactiveTintColor: theme.colors.icons,
                   tabBarStyle: { 
                     backgroundColor: theme.colors.primary, 
                     borderTopColor: theme.colors.primary, 
                     height: 65,
                     paddingVertical: Platform.OS === 'ios' ? 20 : 0,
                   },
-                  tabBarLabelPosition: 'beside-icon'
+                  tabBarLabelPosition: 'beside-icon',
+                  tabBarLabelStyle: {
+                      fontFamily: theme.fonts.regular
+                  }
                 }}
             >
                 <Screen  
