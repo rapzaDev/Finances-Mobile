@@ -17,6 +17,7 @@ import {
     Transactions,
     Title,
     TransactionsList,
+    LogoutButton,
 } from './styles';
 
 export interface DataListProps extends TransactionCardData {
@@ -77,6 +78,10 @@ function Dashboard() {
 
     ]
 
+    function handlePowerButton () {
+        console.log('clicked');
+    }
+
     return (
         <>
             <Container>
@@ -92,7 +97,10 @@ function Dashboard() {
                             </User>
                         </UserInfo>
 
-                        <PowerIcon name="power" />
+                        <LogoutButton onPress={ () => handlePowerButton() }>
+                            <PowerIcon name="power" />
+                        </LogoutButton>                        
+
                     </UserWrapper>
 
                 </Header>

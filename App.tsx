@@ -2,6 +2,7 @@ import React from 'react';
 import { StatusBar } from 'react-native';
 import { ThemeProvider } from 'styled-components/native';
 import AppLoading from 'expo-app-loading';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 import {
   useFonts,
@@ -28,7 +29,9 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <StatusBar translucent/>
-      <AppRoutes />
+      <GestureHandlerRootView style={{ flex: 1 }}>
+        <AppRoutes />
+      </GestureHandlerRootView>
     </ThemeProvider>
   );
 }

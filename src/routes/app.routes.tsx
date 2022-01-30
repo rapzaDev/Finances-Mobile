@@ -2,6 +2,7 @@ import React from 'react';
 import { Platform } from 'react-native';
 import { useTheme } from 'styled-components';
 import { MaterialIcons } from '@expo/vector-icons';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
