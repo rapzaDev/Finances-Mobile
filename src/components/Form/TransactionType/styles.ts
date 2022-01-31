@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components/native';
-import { TouchableOpacity } from 'react-native';
+import { RectButton } from 'react-native-gesture-handler';
 import { Feather } from '@expo/vector-icons';
 import { RFPercentage, RFValue } from 'react-native-responsive-fontsize';
 
@@ -14,13 +14,8 @@ interface IconProps {
 }
 
 
-export const Container = styled(TouchableOpacity)<ContainerProps>`
+export const Container = styled.View<ContainerProps>`
     width: ${ RFPercentage(22.7) }px;
-
-    flex-direction: row;
-
-    align-items: center;
-    justify-content: center;
 
     border: 1.5px solid;
     border-radius: ${ RFValue(5) }px;
@@ -39,10 +34,15 @@ export const Container = styled(TouchableOpacity)<ContainerProps>`
     ${ ({ isSelected, type }) =>  isSelected && type === 'positive' && css`
         background-color: ${({ theme }) => theme.colors.success_light};
     ` };
+`;
 
-
+export const Button = styled(RectButton)`
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 
     padding: ${ RFValue(16) }px;
+
 `;
 
 export const Icon = styled(Feather)<IconProps>`
